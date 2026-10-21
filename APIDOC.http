@@ -1,0 +1,86 @@
+#api cal for user signup view
+###
+POST http://127.0.0.1:8000/v1/register/signup/
+Content-Type: application/json
+
+{
+    "username":"yadhu",
+    "email":"yadhu123@gmail.com",
+    "password":"777"
+}
+
+#api cal for list the complaints
+###
+GET http://127.0.0.1:8000/v1/register/complaint/ 
+Accept: application/json
+Authorization: Basic yadhu:777
+
+#api cal for create the complaints
+###
+POST http://127.0.0.1:8000/v1/register/complaint/ 
+Content-Type: application/json
+Authorization: Basic yadhu:777
+
+{
+    "title":"complaint registration",
+    "description":"about the poor equipments",
+    "complaint_type":"Equipment",
+    "department":"cardio",
+    "priority":"Critical",
+    "status":"Resolved"
+}
+
+#api cal for retrieve complaints
+###
+GET http://127.0.0.1:8000/v1/register/complaint/2/ 
+Accept: application/json
+Authorization: Basic yadhu:777 
+
+#api cal for update
+###
+PUT http://127.0.0.1:8000/v1/register/complaint/2/ 
+Content-Type: application/json
+Authorization: Basic yadhu:777
+
+{
+  "id": 2,
+  "title": "complaint registration",
+  "description": "about the billing staff of the hospital",
+  "complaint_type": "Billing",
+  "department": "op",
+  "priority": "Critical",
+  "status": "In Progress",
+  "reported_date": "2026-10-21T06:30:40.637674Z",
+  "user": 1
+}
+
+#api cal for delete 
+###
+DELETE http://127.0.0.1:8000/v1/register/complaint/4/ 
+Accept: application/json
+Authorization: Basic yadhu:777
+
+
+#api cal for summary
+###
+GET http://127.0.0.1:8000/v1/register/summary/ 
+Accept: application/json
+Authorization: Basic yadhu:777
+
+#api call for total
+###
+GET http://127.0.0.1:8000/v1/register/total/ 
+Accept: application/json
+Authorization: Basic yadhu:777
+
+#api cal for count of status
+###
+GET http://127.0.0.1:8000/v1/register/count/  
+Accept: application/json
+Authorization: Basic yadhu:777
+
+#api cal for priority
+###
+GET http://127.0.0.1:8000/v1/register/priority/  
+Accept: application/json
+Authorization: Basic yadhu:777
