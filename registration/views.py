@@ -8,6 +8,7 @@ from rest_framework import authentication,permissions
 from django.db.models import Count
 from registration.serializers import UserSerializer,ComplaintSerializer
 from registration.models import Complaint
+from registration.permission import IsOwner
 
 
 
@@ -51,7 +52,7 @@ class ComplaintListCreateViews(APIView):
 class ComplaintRetrieveUpdateDeleteViews(APIView):
 
     authentication_classes = [authentication.BasicAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsOwner]
 
     def get(self,request,pk=None):
         instance = get_object_or_404(Complaint,id=pk)
